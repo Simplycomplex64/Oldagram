@@ -141,9 +141,17 @@ document.addEventListener("DOMContentLoaded", function() {
                 
                 // Mark the button as liked
                 icon.classList.add('liked');
+            } else {
+                // Decrement likes
+                currentLikes--;
+                likesCount.textContent = currentLikes + ' likes';
+                
+                // Unmark the button as liked
+                icon.classList.remove('liked');
             }
         });
     });
 });
+
 
 
