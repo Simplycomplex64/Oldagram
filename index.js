@@ -132,9 +132,18 @@ document.addEventListener("DOMContentLoaded", function() {
         icon.addEventListener('click', function() {
             const likesCount = icon.parentElement.querySelector('.likes-count');
             let currentLikes = parseInt(likesCount.textContent);
-            currentLikes++;
-            likesCount.textContent = currentLikes + ' likes';
+            
+            // Check if the button has already been clicked
+            if (!icon.classList.contains('liked')) {
+                // Increment likes
+                currentLikes++;
+                likesCount.textContent = currentLikes + ' likes';
+                
+                // Mark the button as liked
+                icon.classList.add('liked');
+            }
         });
     });
 });
+
 
