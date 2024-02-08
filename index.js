@@ -46,6 +46,7 @@ const posts = [
     }
 ]
 
+
 function displayPost() {
     // Get the container to append posts
     const container = document.querySelector('.container');
@@ -95,13 +96,13 @@ function displayPost() {
         controlsSection.appendChild(likeIcon);
 
         const commentIcon = document.createElement('img');
-        commentIcon.classList.add('mini-icons');
+        commentIcon.classList.add('mini-icons2');
         commentIcon.src = 'images/icon-comment.png';
         commentIcon.alt = 'Comment icon';
         controlsSection.appendChild(commentIcon);
 
         const dmIcon = document.createElement('img');
-        dmIcon.classList.add('mini-icons');
+        dmIcon.classList.add('mini-icons2');
         dmIcon.src = 'images/icon-dm.png';
         dmIcon.alt = 'DM icon';
         controlsSection.appendChild(dmIcon);
@@ -123,3 +124,17 @@ function displayPost() {
 
 // Call the function to display posts
 displayPost();
+
+document.addEventListener("DOMContentLoaded", function() {
+    const likeIcons = document.querySelectorAll('.mini-icons');
+
+    likeIcons.forEach(function(icon) {
+        icon.addEventListener('click', function() {
+            const likesCount = icon.parentElement.querySelector('.likes-count');
+            let currentLikes = parseInt(likesCount.textContent);
+            currentLikes++;
+            likesCount.textContent = currentLikes + ' likes';
+        });
+    });
+});
+

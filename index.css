@@ -11,7 +11,7 @@ html, body {
     height: 853px;
     border: 5px solid black;
     border-radius: 20px;
-    width: 450;
+    width: 550px;
     overflow-x: auto;
     position: relative;
 }
@@ -98,14 +98,14 @@ height: auto;
     border-bottom-right-radius: 15px;
 }
 
-.mini-icons{
+.mini-icons, .mini-icons2{
     width: 30px;
-    animation: 0.3s ease-in-out;
+    animation:  0.3s ease-in-out;
     margin-bottom: 0;
     margin-right: 3px;
 }
 /* icons effects*/
-.mini-icons:hover{
+.mini-icons:hover, .mini-icons2:hover{
     transform: scale(1.2);
 }
 /* like sections settings*/
